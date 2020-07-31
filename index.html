@@ -12,15 +12,144 @@
     <meta property="og:image" content="public/img/events-share/png">
     <link rel="icon" type="image/x-icon" href="public/img/favicon.png">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="public/css/main.css">
 
     <meta name="theme-color" content="#fafafa">
 </head>
 <body>
     <!-- Google Analytics or GTM snippet-->
 
-    <p>Welcome</p>
+    <div class="toast error hide">
+        <span><i class="fas fa-times-circle"></i> Ops, something went wrong with this Event</span>
+        <img src="public/img/close.svg" width="10" height="10" alt="close message">
+    </div>
+
+    <div class="toast success hide">
+        <span><i class="fas fa-check-circle"></i> Awesome, See you soon in the Meetup</span>
+        <img src="public/img/close.svg" width="10" height="10" alt="close message">
+    </div>
+
+    <div class="toast info hide">
+        <span><i class="fas fa-check-circle"></i> Your name was added to the waiting list, good luck</span>
+        <img src="public/img/close.svg" width="10" height="10" alt="close message">
+    </div>
+
+    <!-- TODO: Include schema -->
+    <section class="meetup">
+        <ul>
+            <li class="card">
+                <div class="head">
+                    <h3>Sāo Paulo Big Data Meetup</h3>
+                    <img src="public/img/brazil.svg" alt="Flag Brazil" width="32" height="32">
+                </div>
+
+                <img src="public/img/sao-paulo.jpg" alt="Sāo Paulo city" class="cover">
+
+                <div class="info">
+                    <span class="date">August 1st & August 2nd 2020</span>
+                    <span class="location"><i class="fas fa-map-marker-alt"></i>Sāo Paulo capital - Brazil</span>
+                    <span class="application"><i class="far fa-calendar-alt"></i>Application date: 30/06/2020</span>
+                </div>
+
+                <div class="cta">
+                    <span class="btn light" data-target="event-667">See Details</span>
+                    <span class="btn dark" data-apply="false">Apply</span>
+                </div>
+            </li>
+            <li class="card">
+                <div class="head">
+                    <h3>Saint Petersburg JS Meetup</h3>
+                    <img src="public/img/russia.svg" alt="Flag Russia" width="32" height="32">
+                </div>
+
+                <img src="public/img/saint-petersburg.jpg" alt="Saint Petersburg city" class="cover">
+
+                <div class="info">
+                    <span class="date">August 1st & August 2nd 2020</span>
+                    <span class="location"><i class="fas fa-map-marker-alt"></i>Saint Peter square - Russia</span>
+                    <span class="application"><i class="far fa-calendar-alt"></i>Application date: 30/06/2020</span>
+                </div>
+
+                <div class="cta">
+                    <span class="btn light" data-target="event-668">See Details</span>
+                    <span class="btn dark" data-apply="true">Apply</span>
+                </div>
+            </li>
+            <li class="card">
+                <div class="head">
+                    <h3>Shanghai CSS Meetup</h3>
+                    <img src="public/img/china.svg" alt="Flag China" width="32" height="32">
+                </div>
+
+                <img src="public/img/shanghai.jpg" alt="Shanghai city" class="cover">
+
+                <div class="info">
+                    <span class="date">August 1st & August 2nd 2020</span>
+                    <span class="location"><i class="fas fa-map-marker-alt"></i>Xiexie Hotel - China</span>
+                    <span class="application"><i class="far fa-calendar-alt"></i>Application date: 30/06/2020</span>
+                </div>
+
+                <div class="cta">
+                    <span class="btn light disabled">See Details</span>
+                    <span class="btn dark" data-list>Waiting list</span>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <div class="modal hide" data-modal="event-667" data-status="none">
+        <div class="content">
+            <i class="fas fa-times close" title="Close modal"></i>
+            <div class="wrapper">
+                <h3>Sāo Paulo Big Data Meetup</h3>
+
+                <span class="date"><i class="far fa-calendar-alt"></i>August 1st & August 2nd 2020</span>
+
+                <p>This is a group for everyone interested in Big Data and related technologies. This is an informal environment for the exchange of ideas and networking.</p>
+                <span class="tag">NoSQL</span>
+                <span class="tag">Hadoop</span>
+                <span class="tag">Linked Data</span>
+                <span class="tag"> Natural Language Processing</span>
+                <span class="tag">Information Retrieval</span>
+                <div class="cta">
+                    <span class="btn dark" data-action="event-667">Join this event</span>
+                </div>
+            </div>
+            <div class="status">
+                <i class="far fa-times-circle error"></i>
+                <strong>Something went wrong!</strong>
+                <p>Your confirmation could not be done yet</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hide" data-modal="event-668" data-status="none">
+        <div class="content">
+            <i class="fas fa-times close" title="Close modal"></i>
+            <div class="wrapper">
+                <h3>Saint Petersburg JS Meetup</h3>
+
+                <span class="date"><i class="far fa-calendar-alt"></i>August 1st & August 2nd 2020</span>
+
+                <p>Our mission is to provide a community and a voice for Saint Petersburg's JavaScript technology community. We aim to further everyone's knowledge and explore all aspects of technology for all skill and interest levels.</p>
+                <span class="tag">javascript</span>
+                <span class="tag">react</span>
+                <span class="tag">node</span>
+                <span class="tag">vue</span>
+                <div class="cta">
+                    <span class="btn dark" data-action="event-668">Join this event</span>
+                </div>
+            </div>
+            <div class="status">
+                <i class="far fa-check-circle success"></i>
+                <strong>Everything went well!</strong>
+                <p>Your confirmation was done with success. See you soon</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="public/js/bundle.js"></script>
 </body>
 </html>
