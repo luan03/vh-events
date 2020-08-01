@@ -125,8 +125,26 @@ VH.events = {
     }
 }
 
+VH.navigation = {
+    go: function () {
+        document.querySelectorAll('menu a')._map( (link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault()
+
+                let position = document.querySelector(link.getAttribute('href')).offsetTop
+                window.scrollTo({ top: position, behavior: 'smooth' });
+            })
+        })
+    },
+
+    init: function () {
+        this.go()
+    }
+}
+
 VH.Extensions.init()
 
 VH.modal.init()
 VH.toast.init()
 VH.events.init()
+VH.navigation.init()

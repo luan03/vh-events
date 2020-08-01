@@ -2,6 +2,42 @@ body {
     font-family: 'Roboto', sans-serif;
     position: relative;
 }
+header {
+    width: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    position: fixed;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+    align-content: stretch;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+header li {
+    padding: 20px 0;
+    display: inline-block;
+}
+header img {
+    margin-right: 20px;
+}
+header a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 300;
+    color: #9fa9b1;
+}
+header a:hover {
+    text-decoration: underline;
+}
+menu {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+}
 
 /* reset */
 * {
