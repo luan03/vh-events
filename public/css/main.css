@@ -60,7 +60,7 @@ body {
 
 /* Webinar section */
 .webinar .card {
-    width: 450px;
+    width: 400px;
     height: 600px;
 }
 .webinar h3 {
@@ -175,6 +175,10 @@ body {
 }
 .card.horizontal .cta {
     margin-top: 20px!important;
+}
+.card.premium {
+    background: #04569c14;
+    width: 600px;
 }
 
 /* Modal */
@@ -363,4 +367,12 @@ body {
 }
 .btn.btn.dark:active {
     background-color: #04569c;
+}
+footer {
+    text-align: center;
+    font-weight: 300;
+    padding: 20px 0;
+    background-color: rgb(41, 46, 51);
+    color: #fff;
+    font-size: 12px;
 }
