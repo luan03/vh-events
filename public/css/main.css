@@ -1,7 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     position: relative;
-    display: flex;
 }
 
 /* reset */
@@ -20,57 +19,22 @@ body {
     padding: 20px 0 30px 0;
     font-weight: 300;
 }
-
-/* Meepup section */
-.meetup {
+.container {
     width: 100%;
+    display: block;
     max-width: 1050px;
     margin: 100px auto;
+    border: 2px solid red;
 }
-.meetup ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: stretch;
-}
-.meetup li {
-    float: left;
+
+
+/* Meepup section */
+.meetup .card {
     width: 318px;
-}
-.meetup .cta {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    align-content: stretch;
-    margin: 0 17px 16px 0;
-}
-.meetup .btn.light {
-    display: inline-block;
-    margin-right: 4px;
-}
-.meetup h3 {
-    color: #2A2E33;
-    font-weight: 500;
 }
 .meetup .cover {
     width: 100%;
     margin: 12px 0 19px 0;
-}
-.meetup .info {
-    padding: 0 17px 20px 17px;
-    font-weight: 300;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: stretch;
-    color: #727679;
 }
 .meetup .date {
     font-size: 15px;
@@ -89,7 +53,58 @@ body {
     display: inline-block;
 }
 
+/* Leap section */
+
+/* Recruiting Mission section */
+
+/* VanHackathon section */
+
+/* Webinar section */
+.webinar .card {
+    width: 450px;
+    height: 600px;
+}
+.webinar h3 {
+    padding: 20px 17px 0 17px;
+}
+.webinar img {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    object-fit: cover;
+}
+.webinar p {
+    color: #727679;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 17px 17px 0 17px;
+    line-height: 22px;
+}
+.webinar .info {
+    margin: 10px 0;
+    padding-bottom: 0!important;
+}
+.webinar span {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.webinar i {
+    margin-right: 5px;
+}
+.webinar .free {
+    color: #e0e0e0;
+}
+
 /* Card */
+.cards {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+}
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -107,6 +122,34 @@ body {
     justify-content: space-between;
     align-items: center;
     align-content: stretch;
+}
+.card h3 {
+    color: #2A2E33;
+    font-weight: 500;
+}
+.card .info {
+    padding: 0 17px 20px 17px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: stretch;
+    color: #727679;
+}
+.card .cta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: stretch;
+    margin: 0 17px 16px 0;
+}
+.card .btn.light {
+    display: inline-block;
+    margin-right: 4px;
 }
 
 /* Modal */
