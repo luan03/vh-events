@@ -15,6 +15,11 @@ body {
 .hide {
     display: none!important;
 }
+.title-section {
+    font-size: 30px;
+    padding: 20px 0 30px 0;
+    font-weight: 300;
+}
 
 /* Meepup section */
 .meetup {
