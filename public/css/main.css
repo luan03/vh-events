@@ -1,6 +1,11 @@
 body {
     font-family: 'Roboto', sans-serif;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+body.freeze {
+    overflow: hidden;
 }
 header {
     width: 100%;
@@ -167,6 +172,7 @@ menu {
     color: #727679;
 }
 .card .cta {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -243,7 +249,7 @@ menu {
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
-	align-content: stretch;
+    align-content: stretch;
 }
 .modal .fa-times {
     position: absolute;
@@ -333,7 +339,7 @@ menu {
     left: 0;
     right: 0;
     margin: auto;
-    top: 30px;
+    top: 100px;
     width: 365px;
     height: 35px;
     border-radius: 4px;
@@ -403,6 +409,21 @@ menu {
 }
 .btn.btn.dark:active {
     background-color: #04569c;
+}
+.share {
+    position: absolute;
+    left: 20px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
+    list-style: none;
+}
+.share li {
+    height: 20px;
+    margin: 0 2px;
 }
 footer {
     text-align: center;

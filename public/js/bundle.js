@@ -64,6 +64,8 @@ VH.modal = {
 
                 const modal = button.getAttribute("data-target")
                 document.querySelector(`[data-modal="${modal}"]`).classList.remove('hide')
+
+                document.querySelector('body').classList.add('freeze')
             });
         })
     },
@@ -74,6 +76,8 @@ VH.modal = {
                 document.querySelectorAll('.modal')._map( (modal) => {
                     modal.classList.add('hide')
                     modal.setAttribute('data-status','none')
+
+                    document.querySelector('body').classList.remove('freeze')
                  })
             });
         })
