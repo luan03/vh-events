@@ -15,7 +15,8 @@ VH.modals = {
         content: "This is a group for everyone interested in Big Data and related technologies. This is an informal environment for the exchange of ideas and networking.",
         tags: ["NoSQL", "Hadoop", "Linked Data", "Natural Language Processing"],
         cta: "Join this event",
-        disabled: ""
+        disabled: "",
+        premium: false
     },
     "event-668": {
         id: "event-668",
@@ -25,7 +26,8 @@ VH.modals = {
         content: "Our mission is to provide a community and a voice for Saint Petersburg's JavaScript technology community. We aim to further everyone's knowledge and explore all aspects of technology for all skill and interest levels.",
         tags: ["javascript", "react", "node", "vue"],
         cta: "Join this event",
-        disabled: ""
+        disabled: "",
+        premium: false
     },
     "event-669": {
         id: "event-669",
@@ -35,7 +37,8 @@ VH.modals = {
         content: "Events cater to all skill levels, with talks aimed at those yet to experience the joy of writing elegant, expressive CSS, through to experts looking to find like-minded folk to discuss ideas with.",
         tags: ["css", "flexbox", "bootstrap", "animation", "grid"],
         cta: "Join this event",
-        disabled: "disabled"
+        disabled: "disabled",
+        premium: false
     },
     "event-670": {
         id: "event-670",
@@ -45,7 +48,8 @@ VH.modals = {
         content: "VanHack Leap is an in-person event held across cities in Canada and Europe where companies looking to hire senior tech talent can meet 30-50 top developers – who’ve flown in from all over the world – interview them, and hire them!",
         tags: ["leap", "canada", "job", "tech", "developer"],
         cta: "Join this event",
-        disabled: ""
+        disabled: "",
+        premium: false
     },
     "event-671": {
         id: "event-671",
@@ -55,7 +59,8 @@ VH.modals = {
         content: "2019 has been a great year for VanHack events, but 2020 will be HUGE! We are having more editions of Leap and more editions of the Recruiting Mission in different cities and countries.",
         tags: ["Brazil", "recruiting", "job", "tech", "developer"],
         cta: "Join this event",
-        disabled: ""
+        disabled: "",
+        premium: false
     },
     "event-672": {
         id: "event-672",
@@ -65,7 +70,8 @@ VH.modals = {
         content: "The VanHackathon is for developers and designers who want to get hired abroad. We’ll also have 3-5 companies from Canada and Europe who are looking for great tech talent to add to their teams.",
         tags: ["hackathon", "recruiting", "job", "tech", "developer"],
         cta: "Join this event",
-        disabled: ""
+        disabled: "",
+        premium: false
     },
     "event-673": {
         id: "event-673",
@@ -75,7 +81,8 @@ VH.modals = {
         content: "VanHack helps you quickly find Senior Tech Professionals from our global community of over 130000 candidates who are ready to relocate or work remotely.",
         tags: ["Job", "recruiting", "Canada", "tech", "developer"],
         cta: "Join this event",
-        disabled: ""
+        disabled: "",
+        premium: true
     },
     "event-674": {
         id: "event-674",
@@ -85,7 +92,8 @@ VH.modals = {
         content: "Tech companies are looking to hire and scale diverse teams. Facebook aims to double the number of women on its global workforce.",
         tags: ["hackathon", "recruiting", "job", "tech", "developer", "team", "diversity"],
         cta: "Join this event",
-        disabled: ""
+        disabled: "",
+        premium: false
     },
 }
 
@@ -142,7 +150,7 @@ VH.modal = {
                     <p>${modal.content}</p>
                     ${tags}
                     <div class="cta">
-                        <span class="btn dark ${modal.disabled}" data-id="${modal.id}" data-action="${modal.disabled}">${modal.cta}</span>
+                        <span class="btn dark ${modal.disabled}" data-id="${modal.id}" data-action="${modal.disabled}" data-premium="${modal.premium}">${modal.cta}</span>
                     </div>
                 </div>
             </div>
@@ -173,10 +181,13 @@ VH.modal = {
         document.querySelectorAll('.close')._map( (button) => {
 
             button.addEventListener('click', () => {
-                document.querySelector('body').classList.remove('freeze')
-                document.querySelector('#contentModal').innerHTML = ""
+                this.release()
             });
         })
+    },
+    release: function () {
+        document.querySelector('body').classList.remove('freeze')
+        document.querySelector('#contentModal').innerHTML = ""
     },
     apply: function () {
         document.querySelectorAll('[data-action=""]')._map( (button) => {
@@ -184,6 +195,13 @@ VH.modal = {
 
                 const id = button.getAttribute('data-id')
                 const element = document.querySelector(`[data-target="${id}"]`)
+
+                if (button.getAttribute('data-premium') == "true") {
+
+                    this.premium()
+
+                    return
+                }
 
                 if (element.nextElementSibling.getAttribute('data-apply') === "false") {
                     this.alert(VH.modals.status.error)
@@ -199,6 +217,19 @@ VH.modal = {
             })
         })
     },
+    premium: function () {
+        document.querySelector('#contentModal .modal .wrapper').innerHTML = `<div class="status">
+        <i class="fas fa-exclamation-circle warning"></i>
+            <strong>Premium only</strong>
+            <p>This webinar is available only for premium users.</p>
+            <span class="btn dark premium">Get Premium</span>
+        </div>`;
+
+        document.querySelector('.btn.premium').addEventListener('click', () => {
+            this.release()
+        })
+    },
+
     init: function () {
         this.open()
     }

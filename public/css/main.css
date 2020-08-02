@@ -12,7 +12,7 @@ header {
     background: #fff;
     top: 0;
     left: 0;
-    z-index: 2000;
+    z-index: 4000;
     position: fixed;
     display: flex;
 	flex-direction: row;
@@ -306,6 +306,9 @@ menu {
 .modal .status i.error {
     color: #C9413A;
 }
+.modal .status i.warning {
+    color: #fcac0f;
+}
 .modal .status i {
     font-size: 40px;
     display: block;
@@ -322,6 +325,10 @@ menu {
     color: #97A1AB;
     font-size: 14px;
     font-weight: 300;
+}
+.modal .status .btn.premium {
+    margin-top: 20px;
+    display: block;
 }
 
 .modal[data-status="message"] .wrapper {
