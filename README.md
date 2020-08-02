@@ -91,30 +91,7 @@ vh-events/
 <h3>TODO</h3>
 <ul>
     <li>modal animations<li>
-    <li>share event data details<li>
     <li>responsive<li>
     <li>upload images to my website domain<li>
-    <li>improve 3 more events<li>
-    <li>schema<li>
     <li>multiples apply clicks error toast settimeout<li>
-    <li> modal status<li>
-    <li>fix toast event name<li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
-    <li><li>
 </ul>

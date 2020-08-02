@@ -87,7 +87,7 @@ VH.modals = {
     "event-674": {
         id: "event-674",
         status: "none",
-        title: "Learn how to hire and scale a diverse team",
+        title: "Learn how to hire and scale",
         date: "August 1st & August 2nd 2020",
         content: "Tech companies are looking to hire and scale diverse teams. Facebook aims to double the number of women on its global workforce.",
         tags: ["hackathon", "recruiting", "job", "tech", "developer", "team", "diversity"],
@@ -255,30 +255,30 @@ VH.Extensions = {
 VH.toast = {
 
     close: function () {
-        document.querySelectorAll('.toast')._map( (toast) => {
-
-            toast.addEventListener('click', () => {
-                toast.classList.add('hide')
-            });
-        })
+        document.querySelector('#contentToast img').addEventListener('click', () => {
+            document.querySelector('#contentToast').innerHTML = ''
+        });
     },
 
     hide: function () {
         const displayTime = 3000
 
         setTimeout(()=> {
-            document.querySelectorAll('.toast')._map( (toast) => {
-                toast.classList.add('hide')
-            })
+            document.querySelector('#contentToast').innerHTML = ''
         }, displayTime)
     },
 
     error: function () {
-        document.querySelector('.toast.error').classList.remove('hide')
+        document.querySelector('#contentToast').innerHTML = `<div class="toast error">
+                        <span><i class="fas fa-times-circle"></i> Ops, something went wrong with this Event</span>
+                        <img src="public/img/close.svg" width="10" height="10" alt="close message">
+                    </div>`
         this.hide()
+        this.close()
     },
 
     info: function () {
+
         const btList = document.querySelector('[data-list]')
 
         btList.addEventListener('click', () => {
@@ -289,19 +289,23 @@ VH.toast = {
 
             btList.classList.add('disabled')
 
-            document.querySelector('.toast.info').classList.remove('hide')
+            document.querySelector('#contentToast').innerHTML = `<div class="toast info">
+                        <span><i class="fas fa-check-circle"></i> Your name was added to the waiting list</span>
+                        <img src="public/img/close.svg" width="10" height="10" alt="close message">
+                    </div>`
             this.hide()
+            this.close()
         });
     },
 
-    success: function () {
-        document.querySelector('.toast.success').classList.remove('hide')
-        this.hide()
-    },
+    success: function (event) {
 
-    init: function () {
+        document.querySelector('#contentToast').innerHTML = `<div class="toast success">
+                        <span><i class="fas fa-check-circle"></i>See you soon in the ${event}</span>
+                        <img src="public/img/close.svg" width="10" height="10" alt="close message">
+                    </div>`
+        this.hide()
         this.close()
-        this.info()
     }
 }
 
@@ -329,13 +333,12 @@ VH.events = {
                         return
                     }
 
-                    // disable button Join Event [CONTINUE]
-
+                    const id = button.previousElementSibling.getAttribute('data-target')
 
                     // success
                     button.innerHTML = "Applied";
                     button.classList.add("active")
-                    VH.toast.success()
+                    VH.toast.success( VH.modals[id].title )
 
                 } else {
                     VH.toast.error()
@@ -378,6 +381,6 @@ VH.navigation = {
 VH.Extensions.init()
 
 VH.modal.init()
-VH.toast.init()
 VH.events.init()
 VH.navigation.init()
+VH.toast.info()

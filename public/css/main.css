@@ -359,8 +359,8 @@ menu {
     right: 0;
     margin: auto;
     top: 100px;
-    width: 365px;
-    height: 35px;
+    width: 340px;
+    min-height: 35px;
     border-radius: 4px;
     padding: 0 10px;
     z-index: 1024;
