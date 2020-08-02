@@ -254,6 +254,8 @@ VH.Extensions = {
  */
 VH.toast = {
 
+    timer: false,
+
     close: function () {
         document.querySelector('#contentToast img').addEventListener('click', () => {
             document.querySelector('#contentToast').innerHTML = ''
@@ -263,7 +265,11 @@ VH.toast = {
     hide: function () {
         const displayTime = 5000
 
-        setTimeout(()=> {
+        if (this.timer) {
+            clearTimeout(this.timer)
+        }
+
+        this.timer = setTimeout(()=> {
             document.querySelector('#contentToast').innerHTML = ''
         }, displayTime)
     },

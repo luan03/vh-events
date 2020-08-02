@@ -90,8 +90,7 @@ vh-events/
 
 <h3>TODO</h3>
 <ul>
-    <li>modal animations<li>
     <li>responsive<li>
+    <li>modal animations<li>
     <li>upload images to my website domain<li>
-    <li>multiples apply clicks error toast settimeout<li>
 </ul>
