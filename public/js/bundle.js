@@ -39,7 +39,16 @@ VH.toast = {
     },
 
     info: function () {
-        document.querySelector('[data-list]').addEventListener('click', () => {
+        const btList = document.querySelector('[data-list]')
+
+        btList.addEventListener('click', () => {
+
+            if (btList.classList.contains("disabled")) {
+                return
+            }
+
+            btList.classList.add('disabled')
+
             document.querySelector('.toast.info').classList.remove('hide')
             this.hide()
         });
@@ -114,6 +123,7 @@ VH.events = {
 
                     // success
                     button.innerHTML = "Applied";
+                    button.classList.add("active")
                     VH.toast.success()
 
                 } else {
