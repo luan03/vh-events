@@ -90,10 +90,35 @@ vh-events/
 
 <h3>TODO</h3>
 <ul>
-    <li>[] Meetup</li>
-    <li>[] Leap</li>
-    <li>[] Recruiting Mission</li>
-    <li>[] VanHackathon</li>
-    <li>[] Premium Webinar</li>
-    <li>[] Open Webinar</li>
+    <li>modal animations<li>
+    <li>share event data details<li>
+    <li>responsive<li>
+    <li>include confirmation inside details modals<li>
+    <li>upload images to my website domain<li>
+    <li>feature 3 mais events<li>
+    <li>make mockup data via javascript<li>
+    <li>content right per modal<li>
+    <li>documenting javascript<li>
+    <li>schema<li>
+    <li>multiples apply clicks error toast<li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
+    <li><li>
 </ul>
