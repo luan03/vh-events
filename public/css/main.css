@@ -60,21 +60,26 @@ menu {
     padding: 20px 0 30px 0;
     font-weight: 300;
 }
+
 .container {
     width: 100%;
     display: block;
     max-width: 1050px;
-    margin: 100px auto;
+    margin: 30px auto;
 }
 
 
 /* Meepup section */
+.meetup {
+    margin-top: 70px;
+}
 .meetup .card {
     width: 318px;
 }
 .meetup .cover {
     width: 100%;
     margin: 12px 0 19px 0;
+    transition: 0.3s;
 }
 .meetup .date {
     font-size: 15px;
@@ -92,12 +97,6 @@ menu {
     width: 20px;
     display: inline-block;
 }
-
-/* Leap section */
-
-/* Recruiting Mission section */
-
-/* VanHackathon section */
 
 /* Webinar section */
 .webinar .card {
@@ -221,6 +220,16 @@ menu {
 .card.premium {
     background: #04569c14;
     width: 600px;
+}
+.card.horizontal .share {
+    left: 20px;
+}
+
+.card:hover .cover {
+    opacity: 0.5;
+}
+.card:hover .share {
+    opacity: 1;
 }
 
 /* Modal */
@@ -410,9 +419,29 @@ menu {
 .btn.btn.dark:active {
     background-color: #04569c;
 }
-.share {
+.share-bt {
     position: absolute;
     left: 20px;
+    color: #727679;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.share.float {
+    width: 250px;
+    top: 150px;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+    z-index: 2000;
+    border-radius: 7px;
+    opacity: 0;
+}
+.share {
+    position: absolute;
+    left: 0;
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -432,4 +461,5 @@ footer {
     background-color: rgb(41, 46, 51);
     color: #fff;
     font-size: 12px;
+    margin-top: 70px;
 }

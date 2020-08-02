@@ -135,8 +135,10 @@ VH.navigation = {
             link.addEventListener('click', (e) => {
                 e.preventDefault()
 
+                const marginTop = 70;
+
                 let position = document.querySelector(link.getAttribute('href')).offsetTop
-                window.scrollTo({ top: position, behavior: 'smooth' });
+                window.scrollTo({ top: position - marginTop, behavior: 'smooth' });
             })
         })
     },
