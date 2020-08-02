@@ -299,7 +299,6 @@ menu {
 }
 .modal .status {
     text-align: center;
-    display: none;
 }
 .modal .status i.success {
     color: #64B437;

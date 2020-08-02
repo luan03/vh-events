@@ -96,12 +96,14 @@ VH.modals.status = {
     error: {
         value: "error",
         title: "Something went wrong!",
-        content: "Your confirmation could not be done yet"
+        content: "Your confirmation could not be done yet",
+        icon: "fa-times-circle"
     },
     success: {
         value: "success",
         title: "Everything went well!",
-        content: "Your confirmation was done with success. See you soon"
+        content: "Your confirmation was done with success. See you soon",
+        icon: "fa-check-circle"
     }
 }
 
@@ -111,8 +113,8 @@ VH.modals.status = {
 VH.modal = {
     alert: function (status) {
 
-        return `<div class="status">
-                    <i class="far fa-check-circle ${status.value}"></i>
+        document.querySelector('#contentModal .modal .wrapper').innerHTML = `<div class="status">
+                    <i class="far ${status.icon} ${status.value}"></i>
                     <strong>${status.title}</strong>
                     <p>${status.content}</p>
                 </div>`
@@ -184,10 +186,11 @@ VH.modal = {
                 const element = document.querySelector(`[data-target="${id}"]`)
 
                 if (element.nextElementSibling.getAttribute('data-apply') === "false") {
-                    alert(' error')
+                    this.alert(VH.modals.status.error)
+
                     return
                 }
-                alert('success')
+                this.alert(VH.modals.status.success)
 
                 element.nextElementSibling.classList.add('active')
                 element.nextElementSibling.textContent = "Applied"
