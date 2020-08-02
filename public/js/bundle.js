@@ -76,7 +76,7 @@ VH.modals = {
     "event-673": {
         id: "event-673",
         status: "none",
-        title: "How to get a Remote Job in Canada",
+        title: "How to get a Remote Job",
         date: "August 1st & August 2nd 2020",
         content: "VanHack helps you quickly find Senior Tech Professionals from our global community of over 130000 candidates who are ready to relocate or work remotely.",
         tags: ["Job", "recruiting", "Canada", "tech", "developer"],
@@ -261,7 +261,7 @@ VH.toast = {
     },
 
     hide: function () {
-        const displayTime = 3000
+        const displayTime = 5000
 
         setTimeout(()=> {
             document.querySelector('#contentToast').innerHTML = ''

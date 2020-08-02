@@ -14,12 +14,6 @@ header {
     left: 0;
     z-index: 4000;
     position: fixed;
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-    align-content: stretch;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 header li {
@@ -39,9 +33,14 @@ header a:hover {
     text-decoration: underline;
 }
 menu {
-    max-width: 1120px;
+    max-width: 1050px;
     margin: 0 auto;
     display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
 }
 
 /* reset */
@@ -101,7 +100,7 @@ menu {
 /* Webinar section */
 .webinar .card {
     width: 400px;
-    height: 600px;
+    height: auto;
 }
 .webinar h3 {
     padding: 20px 17px 0 17px;
@@ -193,7 +192,7 @@ menu {
 }
 .card.horizontal {
     width: 100%;
-    height: 350px;
+    height: auto;
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -208,7 +207,7 @@ menu {
     border-bottom-left-radius: 7px;
 }
 .card.horizontal .content {
-    padding: 20px 17px 20px 0;
+    padding: 20px 17px 0 0;
 }
 .card.horizontal h3 {
     padding-left: 17px;
@@ -216,13 +215,17 @@ menu {
 }
 .card.horizontal .cta {
     margin-top: 20px!important;
+    margin-right: 0!important;
+}
+.card.horizontal p {
+    padding-right: 0;
 }
 .card.premium {
     background: #04569c14;
     width: 600px;
 }
 .card.horizontal .share {
-    left: 20px;
+    left: 15px;
 }
 
 .card:hover .cover {
@@ -252,7 +255,7 @@ menu {
     bottom: 0;
     left: 0;
     margin: auto;
-    color: #97A1AB;
+    color: #727679;
     padding: 48px;
     display: flex;
 	flex-direction: row;
