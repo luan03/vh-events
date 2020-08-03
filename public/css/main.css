@@ -1,3 +1,6 @@
+/* ==========================================================================
+      General
+   ========================================================================== */
 body {
     font-family: 'Roboto', sans-serif;
     position: relative;
@@ -7,6 +10,31 @@ body {
 body.freeze {
     overflow: hidden;
 }
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.hide {
+    display: none!important;
+}
+.title-section {
+    font-size: 30px;
+    padding: 20px 0 30px 0;
+    font-weight: 300;
+}
+
+.container {
+    width: 100%;
+    display: block;
+    max-width: 1050px;
+    margin: 30px auto;
+}
+
+/* ==========================================================================
+      Header
+   ========================================================================== */
 header {
     width: 100%;
     background: #fff;
@@ -15,6 +43,9 @@ header {
     z-index: 4000;
     position: fixed;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+header .fa-bars {
+    display: none;
 }
 header li {
     padding: 20px 0;
@@ -43,32 +74,9 @@ menu {
 	align-content: stretch;
 }
 
-/* reset */
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-/* general */
-.hide {
-    display: none!important;
-}
-.title-section {
-    font-size: 30px;
-    padding: 20px 0 30px 0;
-    font-weight: 300;
-}
-
-.container {
-    width: 100%;
-    display: block;
-    max-width: 1050px;
-    margin: 30px auto;
-}
-
-
-/* Meepup section */
+/* ==========================================================================
+      Meetup
+   ========================================================================== */
 .meetup {
     margin-top: 70px;
 }
@@ -97,7 +105,9 @@ menu {
     display: inline-block;
 }
 
-/* Webinar section */
+/* ==========================================================================
+      Webinar
+   ========================================================================== */
 .webinar .card {
     width: 400px;
     height: auto;
@@ -126,7 +136,9 @@ menu {
     color: #e0e0e0;
 }
 
-/* Card */
+/* ==========================================================================
+      Card
+   ========================================================================== */
 .cards {
     list-style: none;
     display: flex;
@@ -235,7 +247,9 @@ menu {
     opacity: 1;
 }
 
-/* Modal */
+/* ==========================================================================
+      Modal
+   ========================================================================== */
 .modal {
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
@@ -332,6 +346,7 @@ menu {
 .modal .status .btn.premium {
     margin-top: 20px;
     display: block;
+    text-decoration: none;
 }
 
 .modal[data-status="message"] .wrapper {
@@ -344,7 +359,9 @@ menu {
     position: absolute;
 }
 
-/* Tags */
+/* ==========================================================================
+      Tags
+   ========================================================================== */
 .tag {
     font-size: 11px;
     font-weight: 12px;
@@ -355,7 +372,9 @@ menu {
     border: 1px solid #97A1AB;
 }
 
-/* Toast */
+/* ==========================================================================
+      Toast
+   ========================================================================== */
 .toast {
     position: fixed;
     left: 0;
@@ -366,7 +385,7 @@ menu {
     min-height: 35px;
     border-radius: 4px;
     padding: 0 10px;
-    z-index: 1024;
+    z-index: 4000;
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -396,7 +415,9 @@ menu {
     background: #2F76C8;
 }
 
-/* Buttons */
+/* ==========================================================================
+      Buttons
+   ========================================================================== */
 .btn {
     padding: 8px 14px;
     font-weight: 300;
@@ -434,7 +455,9 @@ menu {
     background-color: #04569c;
 }
 
-/* Share */
+/* ==========================================================================
+      Share
+   ========================================================================== */
 .share-bt {
     position: absolute;
     left: 20px;
@@ -470,6 +493,10 @@ menu {
     height: 20px;
     margin: 0 2px;
 }
+
+/* ==========================================================================
+      Footer
+   ========================================================================== */
 footer {
     text-align: center;
     font-weight: 300;
@@ -478,4 +505,83 @@ footer {
     color: #fff;
     font-size: 12px;
     margin-top: 70px;
+}
+
+/* ==========================================================================
+      Responsive
+   ========================================================================== */
+@media (max-width: 992px) {
+    header menu ul {
+        position: absolute;
+        top: 51px;
+        background: #fff;
+        height: 100vh;
+        left: -560px;
+        transition: .4s ease-in;
+    }
+    header menu ul.open {
+        left: 0;
+    }
+    header menu li {
+        width: 100%;
+        padding-left: 13px;
+    }
+    header menu img {
+        margin-left: 20px;
+    }
+    header .fa-bars {
+        display: block;
+        font-size: 20px;
+        margin-right: 20px;
+        color: #94a2ac;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .card.horizontal {
+        flex-direction: column;
+    }
+    .card.horizontal .content {
+        padding-right: 15px;
+    }
+    .card.horizontal img {
+        border-radius: 0;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        width: 100%;
+    }
+    .card.horizontal .cta {
+        padding-top: 50px;
+    }
+    .card.horizontal .share {
+        left: auto;
+        top: 10px;
+    }
+
+    .webinar .cards {
+        flex-direction: column;
+    }
+    .webinar .card {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .meetup .cards {
+        flex-direction: column;
+    }
+    .meetup .card {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .modal .content {
+        width: 96%;
+        height: 396px;
+    }
+
+    footer {
+        margin-top: 0;
+    }
 }

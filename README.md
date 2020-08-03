@@ -87,10 +87,3 @@ vh-events/
     <li>1. After cloning the project, you can run locally via php local server via terminal our a local server as you prefer.</li>
     <li>2. After that, access http://localhost:YOUR_PORT</li>
 </ul>
-
-<h3>TODO</h3>
-<ul>
-    <li>responsive<li>
-    <li>modal animations<li>
-    <li>upload images to my website domain<li>
-</ul>

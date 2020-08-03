@@ -222,7 +222,7 @@ VH.modal = {
         <i class="fas fa-exclamation-circle warning"></i>
             <strong>Premium only</strong>
             <p>This webinar is available only for premium users.</p>
-            <span class="btn dark premium">Get Premium</span>
+            <a href="https://vanhack.com/premium" target="blank" class="btn dark premium">Get Premium</a>
         </div>`;
 
         document.querySelector('.btn.premium').addEventListener('click', () => {
@@ -334,12 +334,22 @@ VH.events = {
 
             button.addEventListener('click', () => {
 
+                const id = button.previousElementSibling.getAttribute('data-target')
+
+                if (VH.modals[id].premium) {
+
+                    VH.modal.template(VH.modals[id])
+                    VH.modal.premium()
+                    VH.modal.close()
+
+                    return
+                }
+
+
                 if (button.getAttribute("data-apply") === "true") {
                     if (button.textContent === "Applied") {
                         return
                     }
-
-                    const id = button.previousElementSibling.getAttribute('data-target')
 
                     // success
                     button.innerHTML = "Applied";
@@ -376,8 +386,16 @@ VH.navigation = {
         })
     },
 
+    toggle: function() {
+        document.querySelector('.fa-bars').addEventListener('click', () => {
+            document.querySelector('header menu ul').classList.toggle('open')
+            document.querySelector('.fa-bars').classList.toggle('fa-times')
+        })
+    },
+
     init: function () {
         this.go()
+        this.toggle()
     }
 }
 
